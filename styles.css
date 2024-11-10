@@ -1,0 +1,756 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "reservacion"
+    "footer";
+  gap: 20px;
+}
+
+/* HEADER */
+header {
+  grid-area: header;
+  background-color: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid #3878b6;
+}
+
+header h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInDown 1s ease-out;
+}
+
+header p {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-top: 10px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* ANIMACION ENTRADA */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* EFECTO */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(74, 144, 226, 0.8),
+    rgba(55, 120, 182, 0.7)
+  );
+  z-index: -1; /* Aseguramos que el gradiente esté detrás del contenido */
+  animation: gradientAnimation 5s infinite alternate;
+}
+
+/* Animación para el gradiente de fondo */
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(
+      135deg,
+      rgba(74, 144, 226, 0.8),
+      rgba(55, 120, 182, 0.7)
+    );
+  }
+  50% {
+    background: linear-gradient(
+      135deg,
+      rgba(50, 110, 195, 0.8),
+      rgba(35, 85, 170, 0.7)
+    );
+  }
+  100% {
+    background: linear-gradient(
+      135deg,
+      rgba(74, 144, 226, 0.8),
+      rgba(55, 120, 182, 0.7)
+    );
+  }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+}
+
+/* FIN DE HEADER */
+
+/* NAVEGACION */
+
+nav {
+  grid-area: nav;
+  background-color: #7bafd4;
+  padding: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  font-family: "Arial", sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover para los enlaces */
+nav ul li a:hover {
+  background-color: #4c6e94;
+  transform: scale(1.1);
+}
+
+/* Resaltar el enlace activo */
+nav ul li a.active {
+  background-color: #3d5a7f;
+  transform: scale(1.05);
+}
+
+nav ul li a:active {
+  transform: scale(0.98);
+}
+
+nav {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  nav ul li {
+    font-size: 1em;
+  }
+}
+
+/* FIN DE NAVEGACION */
+
+/* INICIO */
+main {
+  grid-area: main;
+  padding: 20px;
+}
+
+#Inicio {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.intro {
+  background: url("/src/img/fondo-viaje.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  flex: 1;
+  border-radius: 8px;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.intro p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* GALERIA */
+.galeria {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.galeria img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  flex: 1 1 calc(33% - 10px);
+  height: auto;
+}
+
+.galeria h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.imagenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.imagenes img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.imagenes img:hover {
+  transform: scale(1.05);
+}
+
+/* BENEFICIOS */
+.beneficios {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.beneficios h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.beneficios ul {
+  list-style: none;
+  padding: 0;
+}
+
+.beneficios ul li {
+  font-size: 1.25rem;
+  margin: 10px 0;
+  color: #666;
+  font-weight: 500;
+}
+
+.beneficios ul li::before {
+  content: "✔️";
+  margin-right: 10px;
+  color: #2e8b57;
+}
+
+/* FIN DE INICIO */
+
+/* SERVICIO */
+
+section#servicios {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section#servicios:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+section#servicios h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+section#servicios p {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+section#servicios h3 {
+  font-size: 1.8rem;
+  color: #4a4a4a;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Estilo para listas */
+section#servicios ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section#servicios ul li {
+  background: #e0f7fa;
+  color: #00796b;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+section#servicios ul li:hover {
+  background-color: #b2ebf2;
+}
+
+section#servicios ul li::before {
+  content: "✓";
+  color: #00796b;
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Testimonios */
+section#servicios blockquote {
+  background: #f1f8e9;
+  padding: 1.5rem;
+  border-left: 6px solid #8bc34a;
+  font-style: italic;
+  color: #6d6d6d;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+section#servicios blockquote cite {
+  display: block;
+  text-align: right;
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+/* Preguntas frecuentes */
+section#servicios details {
+  background: #fff8e1;
+  border: 1px solid #ffeb3b;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+section#servicios details:hover {
+  background-color: #fff9c4;
+}
+
+section#servicios details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ff9800;
+  font-size: 1.2rem;
+}
+
+section#servicios details p {
+  padding-top: 0.5rem;
+  color: #555;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+section p {
+  text-align: justify;
+}
+
+/* Botón de acción */
+section#servicios button {
+  display: block; /* Cambiado de inline-block a block */
+  width: 100%;
+  max-width: 220px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 2rem auto 0; /* Asegura el centrado */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center; /* Asegura que el texto también esté centrado */
+}
+
+section#servicios button:hover {
+  background-color: #388e3c;
+  transform: translateY(-3px);
+}
+
+section#servicios button:active {
+  transform: translateY(0);
+}
+
+/* FIN DE SERVICIO */
+
+/* RESERVACIÓN */
+
+#reservacion {
+  padding: 40px 20px;
+  background-color: #f4f4f9;
+}
+
+#reservacion h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Estilo del contenedor del formulario */
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-10px);
+}
+
+/* Estilo de los fieldsets y legend */
+form fieldset {
+  border: none;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+form legend {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+form select {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+/* Estilo de las etiquetas y entradas */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="date"],
+form input[type="time"],
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="date"]:focus,
+form input[type="time"]:focus,
+form textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Estilo de los botones */
+form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: white;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+}
+
+button[type="button"] {
+  background-color: #2196f3;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+button[type="button"]:hover {
+  background-color: #1e88e5;
+}
+
+/* Estilo de los campos de texto (textarea) */
+form textarea {
+  font-family: Arial, sans-serif;
+  resize: vertical;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #reservacion h2 {
+    font-size: 1.8em;
+  }
+
+  form button {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+/* FIN DE RESERVACION */
+
+/* FOOTER */
+
+footer {
+  grid-area: footer;
+  background-color: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  grid-row: 6;
+}
+
+.contacto {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.contacto-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+}
+
+.contacto-description {
+  font-size: 1.1em;
+  color: #555;
+  text-align: center;
+}
+
+.contacto-form {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contacto-form-group {
+  margin-bottom: 1em;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.contacto-form-group label {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 0.5em;
+  display: block;
+  text-align: start;
+}
+
+.contacto-form-group input,
+.contacto-form-group textarea {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+}
+
+.contacto-form-group textarea {
+  resize: vertical;
+}
+
+.contacto-submit {
+  background-color: #7bafd4;
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contacto-submit:hover {
+  background-color: #4c6e94;
+}
+
+.contacto {
+  background-color: transparent;
+  color: #fff;
+}
+
+.contacto-title, .contacto-description {
+  color: #fff;
+}
+
+.contacto-form-group input,
+.contacto-form-group textarea {
+  background-color: #fff;
+  color: #333;
+}
+
+.contacto-submit {
+  display: block;
+  margin: 0 auto;
+  background-color: #7bafd4;
+  color: white;
+  padding: 0.6em 1.2em;
+  width: auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contacto-submit:hover {
+  background-color: #4c6e94;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contacto-form-group input,
+  .contacto-form-group textarea {
+    max-width: 100%;
+  }
+}
+
+/* FIN DE FOOTER*/

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VM BUS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <h1>Agencia de Viajes VM BUS</h1>
+        <p>Tu mejor opción para viajes y aventuras</p>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#reservacion">Reservación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <main id="inicio">
+        <section class="intro">
+          <h1>Bienvenido a VM BUS</h1>
+          <p>
+            En VM BUS, nos dedicamos a hacer realidad tus sueños de viaje.
+            Descubre destinos impresionantes, disfruta de experiencias únicas y
+            crea recuerdos que durarán para siempre. ¡Explora el mundo con
+            nosotros!
+          </p>
+        </section>
+
+        <section class="galeria">
+          <h2>Destinos Destacados</h2>
+          <div class="imagenes">
+            <img src="/src/img/playa-paradisiaca.jpg" alt="Playa paradisíaca" />
+            <img src="/src/img/montania-nevada.jfif" alt="Montaña nevada" />
+            <img src="/src/img/ciudad-moderna.jpg" alt="Ciudad moderna" />
+            <img src="/src/img/desierto.jpg" alt="Desierto" />
+            <img src="/src/img/playa-caribenia.jpg" alt="Playa caribeña" />
+            <img src="/src/img/selva.jpg" alt="Selva amazónica" />
+          </div>
+        </section>
+
+        <section class="beneficios">
+          <h2>¿Por qué elegirnos?</h2>
+          <ul>
+            <li>Itinerarios personalizados</li>
+            <li>Ofertas especiales para grupos y familias</li>
+            <li>Soporte 24/7 en todo el mundo</li>
+            <li>Asesoramiento de expertos en cada destino</li>
+          </ul>
+        </section>
+      </main>
+
+      <section id="servicios">
+        <h2>Servicios</h2>
+        <p>
+          Para que tu experiencia de viaje sea inolvidable, ofrecemos servicios
+          adicionales que pueden adaptarse a tus necesidades. Disfruta de la
+          comodidad, seguridad y diversión durante todo tu viaje.
+        </p>
+
+        <h3>Servicios Destacados</h3>
+        <ul>
+          <li>
+            <strong>Asistencia en el aeropuerto</strong>: Recepción y traslado
+            personalizado.
+          </li>
+          <li>
+            <strong>Tours guiados</strong>: Tours privados a los mejores
+            destinos turísticos.
+          </li>
+          <li>
+            <strong>Seguro de viaje</strong>: Cobertura ante emergencias durante
+            el viaje.
+          </li>
+          <li>
+            <strong>Actividades adicionales</strong>: Excursiones, deportes
+            acuáticos y más.
+          </li>
+        </ul>
+
+        <h3>Servicios Premium</h3>
+        <ul>
+          <li>
+            <strong>Traslado VIP</strong>: Traslado en vehículos de lujo o
+            helicóptero.
+          </li>
+          <li>
+            <strong>Guías personalizados</strong>: Con itinerarios ajustados a
+            tus preferencias.
+          </li>
+          <li>
+            <strong>Asistencia 24/7</strong>: Atención personalizada en
+            cualquier momento.
+          </li>
+          <li>
+            <strong>Acceso exclusivo a eventos</strong>: Entradas a eventos y
+            experiencias únicas.
+          </li>
+        </ul>
+
+        <h3>Testimonios de Clientes</h3>
+        <blockquote>
+          “Gracias a los servicios adicionales, tuvimos el viaje de nuestros
+          sueños sin preocuparnos de nada. ¡La atención fue excelente!” - María
+          G.
+        </blockquote>
+
+        <h3>Preguntas Frecuentes</h3>
+        <details>
+          <summary>¿El seguro cubre todas las actividades?</summary>
+          <p>
+            El seguro cubre la mayoría de actividades, excepto aquellas de alto
+            riesgo. Consulta las condiciones al momento de reservar.
+          </p>
+        </details>
+        <details>
+          <summary>
+            ¿Cuánto tiempo antes debo reservar una actividad adicional?
+          </summary>
+          <p>
+            Recomendamos reservar al menos 48 horas antes de la actividad para
+            garantizar disponibilidad.
+          </p>
+        </details>
+
+        <button onclick="window.location.href='reservacion.html'">
+          Cotizar Servicios
+        </button>
+      </section>
+
+      <section id="reservacion">
+        <h2>Reserva tu Viaje</h2>
+        <div class="form-container">
+          <form id="formularioReserva">
+            <fieldset>
+              <legend>Datos Personales</legend>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required />
+      
+              <label for="apellido">Apellido:</label>
+              <input type="text" id="apellido" name="apellido" required />
+            </fieldset>
+      
+            <fieldset>
+              <legend>Detalles del Viaje</legend>
+              <label for="fechaInicio">Fecha Inicio:</label>
+              <input type="date" id="fechaInicio" name="fechaInicio" />
+      
+              <label for="fechaFin">Fecha Fin:</label>
+              <input type="date" id="fechaFin" name="fechaFin" />
+      
+              <label for="pasajeros">Número de Pasajeros:</label>
+              <input type="number" id="pasajeros" name="pasajeros" min="1" />
+      
+              <label for="días">Días Totales:</label>
+              <input type="number" id="días" name="días" readonly />
+            </fieldset>
+      
+            <fieldset>
+              <legend>Servicios Extras</legend>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="extras" value="comida" /> Comida</label>
+                <label><input type="checkbox" name="extras" value="guía" /> Guía Turístico</label>
+                <label><input type="checkbox" name="extras" value="transporte" /> Transporte</label>
+                <label><input type="checkbox" name="extras" value="seguro" /> Seguro de Viaje</label>
+              </div>
+              <button type="button" id="selectAllCheckbox">Seleccionar Todos</button>
+            </fieldset>
+      
+            <fieldset>
+              <legend>Destino</legend>
+              <select id="destino" name="destino">
+                <option value="">Seleccionar</option>
+                <option value="playa">Playa</option>
+                <option value="montaña">Montaña</option>
+                <option value="ciudad">Ciudad</option>
+                <option value="desierto">Desierto</option>
+              </select>
+              <button type="button" id="uppercaseBtn">MAYÚSCULAS</button>
+              <button type="button" id="lowercaseBtn">minúsculas</button>
+            </fieldset>
+      
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <section id="contacto" class="contacto">
+          <h2 class="contacto-title">Contacto</h2>
+          <p class="contacto-description">Déjanos tu mensaje y nos pondremos en contacto contigo pronto.</p>
+        
+          <div class="contacto-form-container">
+            <form class="contacto-form">
+              <div class="contacto-form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+              </div>
+        
+              <div class="contacto-form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+        
+              <div class="contacto-form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+              </div>
+        
+              <div class="contacto-form-group">
+                <button type="submit" class="contacto-submit">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <p>&copy; 2024 Agencia de Viajes Aventuras</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
