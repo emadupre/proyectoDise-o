@@ -103,7 +103,7 @@ header::before {
   animation: gradientAnimation 5s infinite alternate;
 }
 
-/* Animación para el gradiente de fondo */
+
 @keyframes gradientAnimation {
   0% {
     background: linear-gradient(
@@ -128,7 +128,7 @@ header::before {
   }
 }
 
-/* Ajustes responsivos */
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 2em;
@@ -175,13 +175,11 @@ nav ul li a {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Efecto hover para los enlaces */
 nav ul li a:hover {
   background-color: #4c6e94;
   transform: scale(1.1);
 }
 
-/* Resaltar el enlace activo */
 nav ul li a.active {
   background-color: #3d5a7f;
   transform: scale(1.05);
@@ -370,7 +368,6 @@ section#servicios h3 {
   letter-spacing: 0.5px;
 }
 
-/* Estilo para listas */
 section#servicios ul {
   list-style: none;
   padding: 0;
@@ -401,7 +398,6 @@ section#servicios ul li::before {
   font-size: 1.3rem;
 }
 
-/* Testimonios */
 section#servicios blockquote {
   background: #f1f8e9;
   padding: 1.5rem;
@@ -424,7 +420,6 @@ section#servicios blockquote cite {
   color: #4a4a4a;
 }
 
-/* Preguntas frecuentes */
 section#servicios details {
   background: #fff8e1;
   border: 1px solid #ffeb3b;
@@ -456,9 +451,8 @@ section p {
   text-align: justify;
 }
 
-/* Botón de acción */
 section#servicios button {
-  display: block; /* Cambiado de inline-block a block */
+  display: block;
   width: 100%;
   max-width: 220px;
   padding: 1rem;
@@ -469,11 +463,11 @@ section#servicios button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  margin: 2rem auto 0; /* Asegura el centrado */
+  margin: 2rem auto 0; 
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  text-align: center; /* Asegura que el texto también esté centrado */
+  text-align: center; 
 }
 
 section#servicios button:hover {
@@ -502,7 +496,7 @@ section#servicios button:active {
   margin-bottom: 20px;
 }
 
-/* Estilo del contenedor del formulario */
+
 .form-container {
   max-width: 700px;
   margin: 0 auto;
@@ -517,7 +511,6 @@ section#servicios button:active {
   transform: translateY(-10px);
 }
 
-/* Estilo de los fieldsets y legend */
 form fieldset {
   border: none;
   padding: 15px;
@@ -532,7 +525,7 @@ form legend {
 }
 
 form select {
-  width: 100%; /* Ocupa todo el ancho del contenedor */
+  width: 100%; 
   padding: 12px;
   margin-bottom: 18px;
   border: 1px solid #ccc;
@@ -542,7 +535,7 @@ form select {
   transition: border-color 0.3s ease;
 }
 
-/* Estilo de las etiquetas y entradas */
+
 form label {
   display: block;
   font-weight: 600;
@@ -575,7 +568,6 @@ form textarea:focus {
   outline: none;
 }
 
-/* Estilo de los botones */
 form button {
   width: 100%;
   padding: 14px;
@@ -604,13 +596,11 @@ button[type="button"]:hover {
   background-color: #1e88e5;
 }
 
-/* Estilo de los campos de texto (textarea) */
 form textarea {
   font-family: Arial, sans-serif;
   resize: vertical;
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .form-container {
     width: 90%;
@@ -745,7 +735,6 @@ footer {
   background-color: #4c6e94;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .contacto-form-group input,
   .contacto-form-group textarea {
