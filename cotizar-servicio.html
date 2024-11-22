@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotizar Servicios - VM BUS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="layout">
+        <header>
+            <h1>Agencia de Viajes VM BUS</h1>
+            <p>Tu mejor opción para viajes y aventuras</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cotizar-servicio.html" class="active">Cotizar Servicios</a></li>
+                <li><a href="index.html#reservacion">Reservación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="cotizacion" class="cotizacion">
+                <h2>Cotiza tus Servicios</h2>
+                <p class="cotizacion-description">
+                    Completa el siguiente formulario para obtener una cotización personalizada de nuestros servicios de viaje.
+                </p>
+        
+                <div class="form-container">
+                    <form id="formularioCotizacion">
+                        <fieldset>
+                            <legend>Datos Personales</legend>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required />
+        
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" required />
+        
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required />
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>Servicios Requeridos</legend>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="servicios" value="asistencia" />
+                                    Asistencia en el aeropuerto
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="servicios" value="tours" />
+                                    Tours guiados
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="servicios" value="seguro" />
+                                    Seguro de viaje
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="servicios" value="actividades" />
+                                    Actividades adicionales
+                                </label>
+                            </div>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>Detalles del Viaje</legend>
+                            <label for="fechaInicio">Fecha Inicio:</label>
+                            <input type="date" id="fechaInicio" name="fechaInicio" required />
+        
+                            <label for="fechaFin">Fecha Fin:</label>
+                            <input type="date" id="fechaFin" name="fechaFin" required />
+        
+                            <label for="pasajeros">Número de Pasajeros:</label>
+                            <input type="number" id="pasajeros" name="pasajeros" min="1" required />
+                        </fieldset>
+        
+                        <button type="submit">Solicitar Cotización</button>
+                    </form>
+                    <div id="resultadoCotizacion" class="resultado-cotizacion" style="display: none;">
+                        <h3>Costo Estimado:</h3>
+                        <p id="costoEstimado"></p>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+        <footer>
+            <section id="contacto" class="contacto">
+                <h2 class="contacto-title">Contacto</h2>
+                <p class="contacto-description">
+                    Déjanos tu mensaje y nos pondremos en contacto contigo pronto.
+                </p>
+
+                <div class="contacto-form-container">
+                    <form class="contacto-form">
+                        <div class="contacto-form-group">
+                            <label for="nombreContacto">Nombre:</label>
+                            <input type="text" id="nombreContacto" name="nombreContacto" required />
+                        </div>
+
+                        <div class="contacto-form-group">
+                            <label for="emailContacto">Email:</label>
+                            <input type="email" id="emailContacto" name="emailContacto" required />
+                        </div>
+
+                        <div class="contacto-form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                        </div>
+
+                        <div class="contacto-form-group">
+                            <button type="submit" class="contacto-submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <p>&copy; 2024 Agencia de Viajes VM BUS</p>
+        </footer>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Establecer restricciones de fechas
+    const today = new Date().toISOString().split('T')[0]; // Obtener la fecha de hoy
+    document.getElementById('fechaInicio').setAttribute('min', today);
+    document.getElementById('fechaFin').setAttribute('min', today);
+
+    // Actualizar el campo de fecha de fin
+    document.getElementById('fechaInicio').addEventListener('input', function () {
+        const fechaInicio = this.value;
+        document.getElementById('fechaFin').setAttribute('min', fechaInicio); // Establecer min en fecha de fin
+    });
+
+    document.getElementById('formularioCotizacion').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevenir el envío del formulario
+
+        // Obtener datos del formulario
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const fechaInicio = document.getElementById('fechaInicio').value;
+        const fechaFin = document.getElementById('fechaFin').value;
+
+        // Simulación de cálculo de precio
+        const basePrice = 100; // Precio base
+        const asistencia = document.querySelector('input[name="servicios"][value="asistencia"]').checked;
+        const tours = document.querySelector('input[name="servicios"][value="tours"]').checked;
+        const seguro = document.querySelector('input[name="servicios"][value="seguro"]').checked;
+        const actividades = document.querySelector('input[name="servicios"][value="actividades"]').checked;
+
+        let totalCost = basePrice; // Iniciar con el precio base
+
+        // Agregar costos según servicios seleccionados
+        if (asistencia) totalCost += 20; // Costo por asistencia
+        if (tours) totalCost += 50; // Costo por tours
+        if (seguro) totalCost += 30; // Costo por seguro
+        if (actividades) totalCost += 40; // Costo por actividades
+
+        const pasajeros = parseInt(document.getElementById('pasajeros').value);
+        totalCost *= pasajeros; // Multiplicar por el número de pasajeros
+
+        // Mostrar el resultado en el cuadro
+        document.getElementById('costoEstimado').innerHTML = `
+            ${nombre} ${apellido}, para las fechas ${fechaInicio} a ${fechaFin}, el costo es de: $${totalCost.toFixed(2)}
+        `;
+        document.getElementById('resultadoCotizacion').style.display = 'block'; // Mostrar el cuadro
+    });
+});
+    </script>
+</body>
+</html>

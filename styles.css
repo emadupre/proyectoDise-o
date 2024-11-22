@@ -103,7 +103,6 @@ header::before {
   animation: gradientAnimation 5s infinite alternate;
 }
 
-
 @keyframes gradientAnimation {
   0% {
     background: linear-gradient(
@@ -127,7 +126,6 @@ header::before {
     );
   }
 }
-
 
 @media (max-width: 768px) {
   header h1 {
@@ -463,11 +461,11 @@ section#servicios button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  margin: 2rem auto 0; 
+  margin: 2rem auto 0;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  text-align: center; 
+  text-align: center;
 }
 
 section#servicios button:hover {
@@ -495,7 +493,6 @@ section#servicios button:active {
   font-weight: 700;
   margin-bottom: 20px;
 }
-
 
 .form-container {
   max-width: 700px;
@@ -525,7 +522,7 @@ form legend {
 }
 
 form select {
-  width: 100%; 
+  width: 100%;
   padding: 12px;
   margin-bottom: 18px;
   border: 1px solid #ccc;
@@ -534,7 +531,6 @@ form select {
   color: #333;
   transition: border-color 0.3s ease;
 }
-
 
 form label {
   display: block;
@@ -707,7 +703,8 @@ footer {
   color: #fff;
 }
 
-.contacto-title, .contacto-description {
+.contacto-title,
+.contacto-description {
   color: #fff;
 }
 
@@ -741,5 +738,36 @@ footer {
     max-width: 100%;
   }
 }
-
 /* FIN DE FOOTER*/
+.cotizacion {
+  background-color: #f4f4f9; /* Fondo claro */
+  padding: 40px 20px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center; /* Centrar el texto */
+}
+
+.cotizacion-description {
+  text-align: center; /* Centrar el texto */
+  color: #666; /* Color del texto del párrafo */
+  margin-bottom: 30px; /* Espacio debajo del párrafo */
+}
+
+.cotizacion h2 {
+  color: #333; /* Color del título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.cotizacion p {
+  color: #666; /* Color del texto del párrafo */
+  margin-bottom: 30px; /* Espacio debajo del párrafo */
+}
+
+.resultado-cotizacion {
+  background-color: #e7f3fe; /* Fondo azul claro */
+  border: 1px solid #b3d4fc; /* Borde azul */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  margin-top: 20px; /* Espacio arriba */
+  text-align: center; /* Centrar el texto */
+}
